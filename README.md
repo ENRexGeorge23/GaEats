@@ -1,4 +1,4 @@
-# oslob_app
+# GaEats
 
 A new Flutter project.
 
