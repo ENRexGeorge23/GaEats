@@ -20,7 +20,9 @@ class AppTheme {
   static const Color _lightPrimaryVariantColor = Color(0xFFFABB50);
   static const Color _lightOnPrimaryColor = Color(0xFFFAD388);
   static const Color _lightTextColorPrimary = Colors.black;
+  static const Color _lightTextColorSecondary = Color(0xFF989494);
   static const Color _appbarColorLight = Color(0xFFFFC500);
+  static const Color _lightBackgroundColor = Color(0xFFFEFCEE);
 
   // *****************
   // dark colors
@@ -39,32 +41,46 @@ class AppTheme {
   // *****************
   // Text Style - light
   // *****************
-  static const TextStyle _lightHeadingText = TextStyle(
+  static const TextStyle _displayLargeText = TextStyle(
       color: _lightTextColorPrimary,
-      fontFamily: "Rubik",
-      fontSize: 20,
+      fontFamily: "Public Sans",
+      fontSize: 30,
       fontWeight: FontWeight.bold);
 
-  static const TextStyle _lightBodyText = TextStyle(
+  static const TextStyle _displayMediumText = TextStyle(
       color: _lightTextColorPrimary,
-      fontFamily: "Rubik",
+      fontFamily: "Public Sans",
+      fontSize: 25,
+      fontWeight: FontWeight.bold);
+
+  static const TextStyle _displaySmallText = TextStyle(
+      color: _lightTextColorSecondary,
+      fontFamily: "Public Sans",
+      fontSize: 16,
+      fontWeight: FontWeight.w500);
+
+  static const TextStyle _bodyLargeText = TextStyle(
+      color: _lightTextColorPrimary,
+      fontFamily: "Public Sans",
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.bold,
       fontSize: 16);
 
   static const TextTheme _lightTextTheme = TextTheme(
-    displayLarge: _lightHeadingText,
-    bodyLarge: _lightBodyText,
+    displayLarge: _displayLargeText,
+    displayMedium: _displayMediumText,
+    displaySmall: _displaySmallText,
+    bodyLarge: _bodyLargeText,
   );
 
   // *****************
   // Text Style - dark
   // *****************
   static final TextStyle _darkThemeHeadingTextStyle =
-      _lightHeadingText.copyWith(color: _darkTextColorPrimary);
+      _displayLargeText.copyWith(color: _darkTextColorPrimary);
 
   static final TextStyle _darkThemeBodyeTextStyle =
-      _lightBodyText.copyWith(color: _darkTextColorPrimary);
+      _bodyLargeText.copyWith(color: _darkTextColorPrimary);
 
   static final TextTheme _darkTextTheme = TextTheme(
     displayLarge: _darkThemeHeadingTextStyle,
@@ -78,7 +94,10 @@ class AppTheme {
   // *****************
 
   static final ThemeData lightTheme = ThemeData(
-      scaffoldBackgroundColor: _lightPrimaryColor,
+      primaryColor: _lightPrimaryColor,
+      splashColor: _lightPrimaryColor,
+      useMaterial3: true,
+      scaffoldBackgroundColor: _lightBackgroundColor,
       appBarTheme: const AppBarTheme(
           color: _appbarColorLight,
           iconTheme: IconThemeData(color: _iconColor)),
@@ -96,6 +115,7 @@ class AppTheme {
   // *****************
 
   static final ThemeData darkTheme = ThemeData(
+      useMaterial3: true,
       scaffoldBackgroundColor: _darkPrimaryColor,
       appBarTheme: AppBarTheme(
           color: _appbarColorDark,
