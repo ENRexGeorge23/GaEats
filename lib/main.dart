@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:oslob_app/2_application/app/oslob_app.dart';
-import 'package:oslob_app/2_application/core/theme.dart';
+import 'package:ga_eats_app/ga_eats_app.dart';
+import 'package:ga_eats_app/core/theme/theme_config.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeService(),
-    child: const OslobApp(),
+    child: const GaEatsApp(),
   ));
 }

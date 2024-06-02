@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreenLoaded extends StatefulWidget {
   const SplashScreenLoaded({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenLoadedState createState() => _SplashScreenLoadedState();
+  SplashScreenLoadedState createState() => SplashScreenLoadedState();
 }
 
-class _SplashScreenLoadedState extends State<SplashScreenLoaded>
+class SplashScreenLoadedState extends State<SplashScreenLoaded>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _opacityAnimation;
@@ -17,10 +18,17 @@ class _SplashScreenLoadedState extends State<SplashScreenLoaded>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 1000),
     )..repeat(reverse: true);
     _opacityAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+
+    setState(() {
+      // Wait for a short delay (e.g., 500 milliseconds) before navigating
+      Future.delayed(const Duration(milliseconds: 3000), () {
+        GoRouter.of(context).go('/login');
+      });
+    });
   }
 
   @override
