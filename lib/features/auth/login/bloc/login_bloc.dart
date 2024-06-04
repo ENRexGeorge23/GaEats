@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -6,10 +8,13 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial()) {
-    on<LoginRequestedEvent>((event, emit) async {
-      emit(LoginLoadingState());
+    on<LoginRequestedEvent>(loginRequestedEvent);
+  }
 
-      emit(LoginLoadedState());
-    });
+  FutureOr<void> loginRequestedEvent(
+      LoginRequestedEvent event, Emitter<LoginState> emit) {
+    emit(LoginLoadingState());
+
+    emit(LoginLoadedState());
   }
 }
