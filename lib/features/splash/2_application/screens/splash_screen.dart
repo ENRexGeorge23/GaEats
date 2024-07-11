@@ -36,9 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context)
-          .copyWith(splashColor: AppTheme.lightTheme.splashColor)
-          .splashColor,
+      color: AppTheme.lightTheme.splashColor,
       child: BlocBuilder<SplashBloc, SplashState>(
         builder: (context, state) {
           if (state is SplashLoadingState) {

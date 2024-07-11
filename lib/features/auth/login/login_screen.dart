@@ -11,35 +11,24 @@ class LoginScreenProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc(),
+    return BlocProvider<LoginBloc>(
+      create: (context) {
+        final loginBloc = LoginBloc();
+        loginBloc.add(LoginRequestedEvent());
+        return loginBloc;
+      },
       child: const LoginScreen(),
     );
   }
 }
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<LoginBloc>().add(LoginRequestedEvent());
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context)
-          .copyWith(
-              scaffoldBackgroundColor:
-                  AppTheme.lightTheme.scaffoldBackgroundColor)
-          .scaffoldBackgroundColor,
+      color: AppTheme.lightTheme.scaffoldBackgroundColor,
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
           if (state is LoginLoadingState) {
