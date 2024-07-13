@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ga_eats_app/core/theme/theme_config.dart';
-import 'package:ga_eats_app/features/splash/2_application/bloc/splash_bloc.dart';
-import 'package:ga_eats_app/features/splash/2_application/screens/view_states/splash_screen_error.dart';
-import 'package:ga_eats_app/features/splash/2_application/screens/view_states/splash_screen_loaded.dart';
-import 'package:ga_eats_app/features/splash/2_application/screens/view_states/splash_screen_loading.dart';
+import 'package:ga_eats_app/features/splash/2_presentation/bloc/splash_bloc.dart';
+import 'package:ga_eats_app/features/splash/2_presentation/screens/view_states/splash_screen_error.dart';
+import 'package:ga_eats_app/features/splash/2_presentation/screens/view_states/splash_screen_loaded.dart';
+import 'package:ga_eats_app/features/splash/2_presentation/screens/view_states/splash_screen_loading.dart';
 
 class SplashScreenProvider extends StatelessWidget {
   static const routeName = '/splash';
@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.lightTheme.splashColor,
+      color: GaEatsTheme.lightTheme.splashColor,
       child: BlocBuilder<SplashBloc, SplashState>(
         builder: (context, state) {
           if (state is SplashLoadingState) {

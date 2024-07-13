@@ -9,19 +9,19 @@ class ThemeService extends ChangeNotifier {
   }
 }
 
-class AppTheme {
-  AppTheme._();
+class GaEatsTheme {
+  GaEatsTheme._();
 
   // *****************
   // light colors
   // *****************
 
-  static const Color _lightPrimaryColor = Color(0xFFFFC500);
-  static const Color _lightPrimaryVariantColor = Color(0xFFFABB50);
-  static const Color _lightOnPrimaryColor = Color(0xFFFAD388);
-  static const Color _lightTextColorPrimary = Colors.black;
-  static const Color _lightTextColorSecondary = Color(0xFF989494);
-  static const Color _appbarColorLight = Color(0xFFFFC500);
+  static const Color lightPrimaryColor = Color(0xFFFFC500);
+  static const Color lightPrimaryVariantColor = Color(0xFFFABB50);
+  static const Color lightOnPrimaryColor = Color(0xFFFAD388);
+  static const Color lightTextColorPrimary = Colors.black;
+  static const Color lightTextColorSecondary = Color(0xFF989494);
+  static const Color appbarColorLight = Color(0xFFFFC500);
   static const Color _lightBackgroundColor = Color(0xFFFEFCEE);
 
   // *****************
@@ -42,28 +42,27 @@ class AppTheme {
   // Text Style - light
   // *****************
   static const TextStyle _displayLargeText = TextStyle(
-      color: _lightTextColorPrimary,
+      color: lightTextColorPrimary,
       fontFamily: "Public Sans",
       fontSize: 30,
       fontWeight: FontWeight.bold);
 
   static const TextStyle _displayMediumText = TextStyle(
-      color: _lightTextColorPrimary,
+      color: lightTextColorPrimary,
       fontFamily: "Public Sans",
       fontSize: 25,
       fontWeight: FontWeight.bold);
 
   static const TextStyle _displaySmallText = TextStyle(
-      color: _lightTextColorSecondary,
+      color: lightTextColorSecondary,
       fontFamily: "Public Sans",
       fontSize: 16,
       fontWeight: FontWeight.w500);
 
   static const TextStyle _bodyLargeText = TextStyle(
-      color: _lightTextColorPrimary,
+      color: lightTextColorPrimary,
       fontFamily: "Public Sans",
-      fontStyle: FontStyle.italic,
-      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
       fontSize: 16);
 
   static const TextTheme _lightTextTheme = TextTheme(
@@ -89,26 +88,58 @@ class AppTheme {
 
   // ------------------------------------------------------------------------------
 
+  static final InputDecorationTheme _inputDecorationTheme =
+      InputDecorationTheme(
+    prefixIconColor: lightPrimaryColor,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: const BorderSide(
+        width: 1.50,
+        color: lightPrimaryColor,
+      ),
+    ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(8)),
+      borderSide: BorderSide(
+        width: 1.50,
+        color: lightPrimaryColor,
+      ),
+    ),
+    focusedBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(8)),
+      borderSide: BorderSide(
+        width: 1.50,
+        color: lightPrimaryColor,
+      ),
+    ),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+    labelStyle: _displaySmallText,
+  );
+  // ------------------------------------------------------------------------------
+
+  // ------------------------------------------------------------------------------
+
   // *****************
   // Theme light
   // *****************
 
   static final ThemeData lightTheme = ThemeData(
-      primaryColor: _lightPrimaryColor,
-      splashColor: _lightPrimaryColor,
-      useMaterial3: true,
-      scaffoldBackgroundColor: _lightBackgroundColor,
-      appBarTheme: const AppBarTheme(
-          color: _appbarColorLight,
-          iconTheme: IconThemeData(color: _iconColor)),
-      colorScheme: const ColorScheme.light(
-        primary: _lightPrimaryColor,
-        onPrimary: _lightOnPrimaryColor,
-        secondary: _accentColor,
-        primaryContainer: _lightPrimaryVariantColor,
-      ),
-      textTheme: _lightTextTheme,
-      bottomAppBarTheme: const BottomAppBarTheme(color: _appbarColorLight));
+    primaryColor: lightPrimaryColor,
+    splashColor: lightPrimaryColor,
+    useMaterial3: true,
+    scaffoldBackgroundColor: _lightBackgroundColor,
+    appBarTheme: const AppBarTheme(
+        color: appbarColorLight, iconTheme: IconThemeData(color: _iconColor)),
+    colorScheme: const ColorScheme.light(
+      primary: lightPrimaryColor,
+      onPrimary: lightOnPrimaryColor,
+      secondary: _accentColor,
+      primaryContainer: lightPrimaryVariantColor,
+    ),
+    textTheme: _lightTextTheme,
+    inputDecorationTheme: _inputDecorationTheme,
+    bottomAppBarTheme: const BottomAppBarTheme(color: appbarColorLight),
+  );
 
   // *****************
   // Theme dark

@@ -11,8 +11,8 @@ class GaEatsApp extends StatelessWidget {
     return Consumer<ThemeService>(builder: (context, themeService, child) {
       return MaterialApp.router(
         themeMode: themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+        theme: GaEatsTheme.lightTheme,
+        darkTheme: GaEatsTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         routerConfig: routes,
       );

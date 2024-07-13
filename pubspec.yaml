@@ -36,7 +36,7 @@ flutter:
      - family: Public Sans
        fonts:
          - asset: assets/fonts/public-sans/PublicSans-Regular.ttf
-         - asset: assets/fonts/public-sans/PublicSans-Italic.ttf
+        #  - asset: assets/fonts/public-sans/PublicSans-Italic.ttf
          - asset: assets/fonts/public-sans/PublicSans-Bold.ttf
          - asset: assets/fonts/public-sans/PublicSans-Thin.ttf
          - asset: assets/fonts/public-sans/PublicSans-SemiBold.ttf

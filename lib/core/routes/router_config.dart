@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:ga_eats_app/features/auth/login/login_screen.dart';
-import 'package:ga_eats_app/features/splash/2_application/screens/splash_screen.dart';
+import 'package:ga_eats_app/features/auth/login/2_presentation/screens/login_screen.dart';
+import 'package:ga_eats_app/features/splash/2_presentation/screens/splash_screen.dart';
 
 // final GlobalKey<NavigatorState> _rootNavigatorKey =
 //     GlobalKey<NavigatorState>(debugLabel: 'root');
