@@ -16,6 +16,7 @@ dependencies:
   sqflite: ^2.3.3+1
   internet_connection_checker: ^1.0.0+1
   get_it: ^7.7.0
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_lints: ^2.0.3
@@ -35,7 +36,7 @@ flutter:
      - family: Public Sans
        fonts:
          - asset: assets/fonts/public-sans/PublicSans-Regular.ttf
-         - asset: assets/fonts/public-sans/PublicSans-Italic.ttf
+        #  - asset: assets/fonts/public-sans/PublicSans-Italic.ttf
          - asset: assets/fonts/public-sans/PublicSans-Bold.ttf
          - asset: assets/fonts/public-sans/PublicSans-Thin.ttf
          - asset: assets/fonts/public-sans/PublicSans-SemiBold.ttf

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ga_eats_app/core/resources/images.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashScreenLoaded extends StatefulWidget {
@@ -50,7 +51,7 @@ class SplashScreenLoadedState extends State<SplashScreenLoaded>
             duration: const Duration(milliseconds: 500),
             child: Center(
               child: Image.asset(
-                'assets/images/logo.png',
+                Images.splashLogo,
                 width: 350,
                 height: 350,
               ),
